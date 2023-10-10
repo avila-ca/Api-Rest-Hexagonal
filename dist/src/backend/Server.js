@@ -17,7 +17,7 @@ const body_parser_1 = require("body-parser");
 const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
 const helmet_1 = __importDefault(require("helmet"));
-const Routes_1 = require("../Todo/infrastructure/Routes");
+const Routes_1 = require("../Todo/infrastructure/routes/Routes");
 class Server {
     constructor(port) {
         this.port = port;
