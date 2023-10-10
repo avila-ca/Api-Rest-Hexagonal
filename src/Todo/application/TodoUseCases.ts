@@ -10,7 +10,7 @@ export class TodoUseCase {
 
 			return tasks;
 		} catch (error) {
-			throw new Error("Creating task error");
+			throw new Error("get method error");
 		}
 	}
 
@@ -18,7 +18,7 @@ export class TodoUseCase {
 		try {
 			await this.todoRepo.create(newtask);
 		} catch (error) {
-			throw new Error("Creating task error");
+			throw new Error("create method error");
 		}
 	}
 
@@ -26,7 +26,7 @@ export class TodoUseCase {
 		try {
 			await this.todoRepo.update(id, newtask);
 		} catch (error) {
-			throw new Error("Creating task error");
+			throw new Error("update method error");
 		}
 	}
 
@@ -34,7 +34,7 @@ export class TodoUseCase {
 		try {
 			await this.todoRepo.delete(id);
 		} catch (error) {
-			throw new Error("Creating task error");
+			throw new Error("delete method error");
 		}
 	}
 }
