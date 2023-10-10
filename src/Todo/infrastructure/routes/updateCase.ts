@@ -10,5 +10,5 @@ export const updateCase = async (
 	const { id } = _req.params;
 	const updateTask: Task = _req.body;
 	await taskUseCase.update(id, updateTask);
-	res.status(200);
+	res.status(200).json({ updateTask });
 };
