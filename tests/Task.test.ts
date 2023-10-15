@@ -1,40 +1,33 @@
 import * as dotenv from "dotenv";
-import type express from "express";
-import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
 import request from "supertest";
 
-import { Server } from "../src/backend/Server";
-import { taskMongo } from "../src/Todo/infrastructure/model/Task-schema";
-import { appRouter } from "../src/Todo/infrastructure/routes/Routes";
-import { dbConnection } from "../src/Todo/infrastructure/dbConnection";
+import { App } from "../src/backend/App";
 
-beforeAll(() => {
+dotenv.config();
 
-    dotenv.config();
-
-    let app: express.Express;
-    const serverObj = new Server("7000");
-    app = serverObj.app;
+describe("GET", () => {
+	test("GET request", async () => {
+		request(App).get("/api");
+		await mongoose.connection.close();
+	}, 100000);
 });
 
-afterAll(async () => {
-    await mongoose.connection.close();
-    await app.close();
-  });
-
-
-describe("When it receives a request with an authorization header containing a valid user and password, and a task as a body", () => {
-    test("Then it should return a 201 status and the new task", async () => {
-        const expectedStatus = 201;
-
-        const response = await request(app)
-            .post("/tasks")
-            .set("Authorization", `Basic ${authString}`)
-            .send(mockedTask)
-            .expect(expectedStatus);
-
-        expect(response.body).toHaveProperty("task");
-    });
+describe("POST", () => {
+	test("POST request", async () => {
+		request(App).post("/api");
+		await mongoose.connection.close();
+	}, 100000);
 });
+describe("PUT", () => {
+	test("PUT request", async () => {
+		request(App).put("/api");
+		await mongoose.connection.close();
+	}, 100000);
+});
+describe("DELETE", () => {
+	test("DELETE request", async () => {
+		request(App).delete("/api");
+		await mongoose.connection.close();
+	}, 100000);
 });

@@ -39,7 +39,4 @@ export class Server {
 	get app(): express.Express {
 		return this.express;
 	}
-	close(): express.Express {
-		this.express.
-	}
 }
