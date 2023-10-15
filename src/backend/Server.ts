@@ -4,6 +4,7 @@ import express from "express";
 import helmet from "helmet";
 
 import { appRouter } from "../Todo/infrastructure/routes/Routes";
+import { cacheControlNoCache } from "./cacheControlNoCache";
 
 export class Server {
 	private readonly express: express.Express;
@@ -16,6 +17,7 @@ export class Server {
 		this.express.use(cors());
 		this.express.use(json());
 		this.express.use(urlencoded({ extended: true }));
+		this.express.use(cacheControlNoCache);
 		this.express.use("/api", appRouter);
 	}
 
