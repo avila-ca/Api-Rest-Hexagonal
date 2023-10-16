@@ -1,19 +1,10 @@
-# 🦋 TypeScript TDD Template
-
-⚡ Start your Node.js project with Typescript using Test Driven Development (TDD) practices.
-
-### 📋 GitHub Actions Workflow:
-
-[![🏠 Build](https://github.com/AraManjon/typescript-tdd-template/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/AraManjon/typescript-tdd-template/actions/workflows/build.yml)
-
-This GitHub Actions workflow automatically builds and tests the application when code changes are pushed to the master branch or a pull request targeting the master branch is opened or synchronized.
 
 ### 📥 Installation
 
 To get started with this template, you first need to clone the repository:
 
 ```bash
-git clone https://github.com/AraManjon/typescript-tdd-template.git
+git clone https://github.com/avila-ca/Api-Rest-Hexagonal
 ```
 
 Then, install the project dependencies:
@@ -48,6 +39,11 @@ npm start
 ```
 
 This will start the server and make it available at http://localhost:8000.
+###  Tests
+
+```bash
+npm run test
+```
 
 
 ### 🏗️ Scripts
@@ -79,7 +75,6 @@ This project comes with several predefined scripts in the package.json file:
 
 - mongodb: driver for MongoDB
 
-- mysql2: MySQL client for Node.js
 
 ### 🛠️ Dev Dependencies
 
@@ -116,25 +111,15 @@ src/
 │   ├── App.ts
 │   ├── server.start.ts
 │   └── Server.ts
-├── shared
-│   ├── utils
-│   ├── domain
-│   └── infrastructure
-│       ├── config
-│       └── persistence
-└── user
+└── todo
     ├── application
-    │   ├── services
-    │   └── use-cases
     ├── domain
     │   ├── entities
     │   └── repositories
     └── infrastructure
-        ├── controllers
-        ├── repositories
+        ├── MongoRepositories
         ├── routes
-        ├── services
-        └── UserModule.ts
+        ├── model
 ```
 
 
