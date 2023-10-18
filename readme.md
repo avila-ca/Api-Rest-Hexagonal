@@ -13,13 +13,49 @@ Then, install the project dependencies:
 npm install
 ```
 
+Put your password in the .env-template file:
+
+...
+
+MONGO_URI=mongodb+srv://root:<password>@todo.pm4fsjf.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp
+
+
+
 ### 🏁 How To Start
 
 To start the server in development mode, run the following script:
+
 ```bash
 npm run dev
 ```
-Then, open http://localhost:8000 to access the server.
+Then, open http://localhost:8000/api to access the server.
+
+## GET Request
+
+http://localhost:8000/api
+
+## POST Request
+In the body:
+{
+  "content":"New entry!!!"
+}
+
+http://localhost:8000/api
+
+## UPDATE Request
+
+{
+  "content":"Updated!!!"
+}
+
+http://localhost:8000/api/<id_task>
+
+## DELETE Request
+
+http://localhost:8000/api/<id_task>
+
+
+# Check all request with the ```thunder-collection_Todo.json``` file
 
 
 ### 🚀 Production
